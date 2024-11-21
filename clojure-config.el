@@ -18,13 +18,16 @@
 
 ;; Auto-indent code automatically
 ;; https://emacsredux.com/blog/2016/02/07/auto-indent-your-code-with-aggressive-indent-mode/
-;; (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+;;(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
 
 ;; Lookup functions in Clojure - The Essentail Reference book
 ;; https://github.com/p3r7/clojure-essential-ref
 (spacemacs/set-leader-keys "oh" 'clojure-essential-ref)
 
-
+;; Paredit autoload
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'clojure-mode 'enable-paredit-mode)
+(add-hook 'clojurescript-mode 'enable-paredit-mode)
 
 ;; ---------------------------------------
 ;; Portal Data Inspector
